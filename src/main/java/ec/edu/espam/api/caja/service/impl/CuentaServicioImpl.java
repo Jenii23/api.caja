@@ -25,12 +25,12 @@ public class CuentaServicioImpl implements CuentaServicio{
 
     @Override
     public Cuenta actualizar(long id, Cuenta cuenta) {
-        Cuenta cuenta1 = cuentaRepositorio.findById(id).orElseThrow(() -> new EntityNotFoundException("No se encuentra la cuenta con el id: " + id));
-        cuenta1.setNumero(cuenta.getNumero());
-        cuenta1.setTipo(cuenta.getTipo());
-        cuenta1.setBalanceInicial(cuenta.getBalanceInicial());
-        cuenta1.setSaldo(cuenta.getSaldo());
-        cuenta1.setEstado(cuenta.getEstado());
-        return cuentaRepositorio.save(cuenta1);
+        Cuenta DatosExistentes = cuentaRepositorio.findById(id).orElseThrow(() -> new EntityNotFoundException("No se encuentra la cuenta con el id: " + id));
+        DatosExistentes.setNumero(cuenta.getNumero());
+        DatosExistentes.setTipo(cuenta.getTipo());
+        DatosExistentes.setBalanceInicial(cuenta.getBalanceInicial());
+        DatosExistentes.setSaldo(cuenta.getSaldo());
+        DatosExistentes.setEstado(cuenta.getEstado());
+        return cuentaRepositorio.save(DatosExistentes);
     }
 }
