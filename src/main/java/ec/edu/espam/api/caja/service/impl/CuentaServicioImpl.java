@@ -25,7 +25,7 @@ public class CuentaServicioImpl implements CuentaServicio{
 
     @Override
     public Cuenta actualizar(long id, Cuenta cuenta) {
-        Cuenta cuenta1 = cuentaRepositorio.findById(id).orElseThrow(() -> new EntityNotFoundException("Cuenta no encontrada id: " + id));
+        Cuenta cuenta1 = cuentaRepositorio.findById(id).orElseThrow(() -> new EntityNotFoundException("No se encuentra la cuenta con el id: " + id));
         cuenta1.setNumero(cuenta.getNumero());
         cuenta1.setTipo(cuenta.getTipo());
         cuenta1.setBalanceInicial(cuenta.getBalanceInicial());
