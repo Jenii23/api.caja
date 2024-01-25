@@ -14,6 +14,7 @@ import java.util.List;
 @RequestMapping("/movimientos")
 @RequiredArgsConstructor
 public class MovementController {
+
     private final MovementService service;
 
     @PostMapping
@@ -40,4 +41,5 @@ public class MovementController {
     public void delete(@PathVariable Long id) {
         service.delete(id);
     }
+
 }

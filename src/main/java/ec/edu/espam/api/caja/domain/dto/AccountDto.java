@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 
 @Data
 public class AccountDto {
+
     private Long id;
 
     @NotEmpty(message = "Number is required")
@@ -19,7 +20,7 @@ public class AccountDto {
     @Enumerated(EnumType.STRING)
     private Account.Type type;
 
-    @NotNull(message = "Initial Balance is required")
+    //@NotNull(message = "Initial Balance is required")
     private BigDecimal initialBalance;
 
     @NotNull(message = "Amount is required")

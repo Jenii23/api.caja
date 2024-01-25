@@ -3,10 +3,15 @@ package ec.edu.espam.api.caja.domain.dto;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-@Data
-public class ClientDto extends PersonDto{
+@Getter
+@Setter
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
+public class ClientDto extends PersonDto {
     @NotEmpty(message = "Password is required")
     @Size(min = 4, message = "Password must have at least 4 characters")
     private String password;

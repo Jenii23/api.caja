@@ -22,7 +22,7 @@ public class ClientController {
 
     @PostMapping
     public ResponseEntity<ClientDto> create(@Valid @RequestBody ClientDto dto) {
-        log.info("Create clients " + dto);
+        log.debug("Create clients " + dto);
         return new ResponseEntity<>(clientService.create(dto), HttpStatus.CREATED);
     }
 
@@ -39,7 +39,7 @@ public class ClientController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ClientDto> update(@PathVariable Long id, @Valid @RequestBody ClientDto dto) {
-        return new ResponseEntity<>(clientService.update(id, dto), HttpStatus.CREATED);
+        return ResponseEntity.ok(clientService.update(id, dto));
     }
 
     @DeleteMapping("{id}")
